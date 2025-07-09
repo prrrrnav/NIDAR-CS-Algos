@@ -28,7 +28,6 @@ This repository contains the complete, foundational software for the GCS. The co
     *   Deploy and test the system on the physical drone hardware, including the NVIDIA Jetson and flight controller.
 *   **KML Area Division:** Implement the geospatial logic within the `MissionPlanner` to parse the main operational area KML and generate sub-area mission files for the scout drones.
 
----
 
 ## Technology Stack
 
