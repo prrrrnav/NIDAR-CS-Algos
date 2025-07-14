@@ -1,0 +1,81 @@
+✅ What Is Done So Far (Based on ReadMEs + What You Told Me)
+Module	Status	Summary
+✅ GPS & KML Logging	✅ Completed	Logs GPS positions, creates .csv and .kml map for survivors
+✅ Drop Module	✅ Completed	Drops load at location, updates JSON, handles load count
+✅ Load Counter	✅ Completed	Manages count (starts with 2), stops if load = 0
+🟡 Camera Module	🔄 In Progress	Human detection started (YOLO or webcam), might not be fully integrated with LRF or GPS yet
+🟡 Multithreading	✅ Being Used	Threads exist in code, more refinement might be needed
+🔴 LRF Distance Integration	❌ Not yet	Needs to be combined with camera to calculate survivor’s real-world GPS
+🔴 Mission Flow Logic	❌ Not yet	Full logic for “scan → drop → return → reflight” not yet implemented
+🔴 Communication with GCS	❌ Not yet	Need to set up MAVLink data sharing or survivor data uplink
+🔴 Auto Reflight to Stored Points	❌ Not yet	After first 2 drops, drone should fly to saved survivor GPS and drop there
+
+🧠 Team Breakdown (Recap of Roles + Progress)
+You’ve split the work among 4 CSE people. Here’s a status view of who should be doing what:
+
+👤 Person 1 – Human Detection + LRF + GPS Calculation
+✅ YOLO or webcam detection started
+
+❌ LRF distance + GPS triangulation not yet done
+
+❌ Still needs to calculate real GPS of detected humans
+
+📌 Priority: Finish integrating camera + LRF → GPS coordinate
+
+👤 Person 2 – Data Logging + KML
+✅ Already saving GPS + load info
+
+✅ KML file generation working
+
+✅ Task complete. Can help others now.
+
+👤 Person 3 – MAVLink Communication with Ground Station
+❌ Not implemented yet
+
+Needs to:
+
+Read drone GPS/altitude/attitude
+
+Send survivor GPS to GCS
+
+Receive new waypoint commands (optional)
+
+📌 Priority: Setup MAVProxy or DroneKit script to send survivor list or mission data
+
+👤 Person 4 – Mission Flow Controller (Main Brain)
+❌ Not yet built
+
+Needs to write:
+
+Mission logic: Takeoff → scan → drop → return → reflight
+
+Use load status + location file to make decisions
+
+Coordinate with Drop + GPS + Camera threads
+
+📌 Priority: Implement mission state machine
+
+📊 Progress Summary Chart
+Area	Status
+Camera Detection	🟡 70%
+LRF + GPS	🔴 0%
+KML Mapping	✅ 100%
+Load Management	✅ 100%
+Drop Trigger	✅ 100%
+Multithreading	🟡 70%
+Ground Station Comm	🔴 0%
+Full Mission Logic	🔴 0%
+
+
+
+✅ Final Thoughts
+You're at 60–65% done from CSE side. Once:
+
+Camera + LRF → GPS is working,
+
+Mission flow is coded,
+
+GCS receives survivor data,
+
+you’ll have a full autonomous scouting-delivery system ready.
+
